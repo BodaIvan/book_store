@@ -23,8 +23,10 @@
       <%end%>
     </nav>
     <br>
-    <%= link_to 'All books', books_path%>
-    <%= link_to 'Add book', new_book_path%>
+    <%if user_signed_in? && current_user.admin%>
+      <%= link_to 'All books', admin_books_path%>
+      <%= link_to 'Add book', new_admin_book_path%>
+    <%end%>
     <%= yield %>
   </body>
 </html>
