@@ -11,10 +11,20 @@
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <br>
+    <nav>
+      <% if user_signed_in? %>
+        <%= link_to 'Exit', destroy_user_session_path, method: :delete%>
+      <%else%>
+        <%= link_to 'Login', new_user_session_path%>
+        <%= link_to 'Registration', new_user_registration_path%>
+      <%end%>
+    </nav>
+    <br>
     <%= link_to 'All books', books_path%>
     <%= link_to 'Add book', new_book_path%>
     <%= yield %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
   </body>
 </html>
