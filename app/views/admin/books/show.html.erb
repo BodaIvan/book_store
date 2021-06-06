@@ -1,3 +1,4 @@
 <h3><%= @book.title%></h3>
+<%= @book.price%>
 <%= link_to 'delete', admin_book_path(@book), method: :delete, data: {confirm: 'Are you shure?'}%>
  
