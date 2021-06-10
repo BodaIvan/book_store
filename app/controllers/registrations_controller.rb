@@ -13,7 +13,8 @@ class RegistrationsController < ApplicationController
   # GET /registrations/new
   def new
     @registration = Registration.new
-    @course = Course.find_by id: params["book_id"]
+    @course = Book.find_by id: params["book_id"]
+    render :new
   end
 
   # POST /registrations
