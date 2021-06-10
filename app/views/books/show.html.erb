@@ -1,6 +1,7 @@
 <h4><%= @book.title%></h4>
 <%if user_signed_in? && current_user.admin%>
       <%= link_to 'delete', admin_book_path(@book), method: :delete, data: {confirm: 'Are you shure?'}%>
+     
 <%end%>
 
  

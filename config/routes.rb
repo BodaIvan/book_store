@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :books
   end
+  resources :registrations
+  post "/registrations/:id" => "registrations#show"
+  post "/hook" => "regstrations#hook"
 end

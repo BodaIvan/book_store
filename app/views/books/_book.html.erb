@@ -1,1 +1,5 @@
-<p><%= link_to book.title, book_path(book)%></p>
+<p><%= link_to book.title, book_path(book)%>
+    <span>---</span>
+    <%=book.price%>
+    <%=button_to "Buy", new_registration_path(book_id: book.id)%>
+</p>

@@ -1,0 +1,28 @@
+        <%= form_for @registration, html: { class: "basic-grey" } do |f| %>
+          <% if @registration.errors.any? %>
+             <%= pluralize(@registration.errors.count, "error") %>
+                prohibited this registration from being saved:
+               <% @registration.errors.full_messages.each do |message| %>
+                    <%= message %>
+               <% end %>
+             
+           <% end %>
+         
+              
+         
+            <%= f.label :full_name %>
+            <%= f.text_field :full_name %>
+          
+            <%= f.label :company %>
+            <%= f.text_field :company %>
+       
+            <%= f.label :email %>
+            <%= f.text_field :email %>
+          
+            <%= f.label :telephone %>
+            <%= f.text_field :telephone %>
+         
+            <%= f.submit "Registration Payment", style: "color: white;background: rgb(242, 118, 73);" %>  
+        <% end %>
+
+
